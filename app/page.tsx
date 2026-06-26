@@ -2,13 +2,31 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { portfolioData } from "@/data/portfolio";
+import { portfolioDataTR, portfolioDataEN } from "@/data/portfolio";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero");
   const [activePreviewUrl, setActivePreviewUrl] = useState<string | null>(null);
   const [activePreviewTitle, setActivePreviewTitle] = useState<string | null>(null);
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
+
+  const [mounted, setMounted] = useState(false);
+  const [lang, setLang] = useState<"tr" | "en">("tr");
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang === "tr" || savedLang === "en") {
+      setLang(savedLang);
+    }
+    setMounted(true);
+  }, []);
+
+  const toggleLang = (selected: "tr" | "en") => {
+    setLang(selected);
+    localStorage.setItem("lang", selected);
+  };
+
+  const portfolioData = mounted && lang === "en" ? portfolioDataEN : portfolioDataTR;
 
 
 
@@ -188,12 +206,12 @@ export default function Home() {
   };
 
   const navItems = [
-    { id: "hero", label: "Hero" },
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" },
+    { id: "hero", label: lang === "tr" ? "Giriş" : "Hero" },
+    { id: "about", label: lang === "tr" ? "Hakkımda" : "About" },
+    { id: "skills", label: lang === "tr" ? "Yetenekler" : "Skills" },
+    { id: "projects", label: lang === "tr" ? "Projeler" : "Projects" },
+    { id: "experience", label: lang === "tr" ? "Deneyim" : "Experience" },
+    { id: "contact", label: lang === "tr" ? "İletişim" : "Contact" },
   ];
 
   return (
