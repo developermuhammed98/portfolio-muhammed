@@ -90,7 +90,7 @@ export const portfolioDataTR: PortfolioData = {
   role: "Web Developer",
   availableForWork: true,
   availableText: "Çalışmaya Hazır",
-  headline: "Karanlıkta kod yazar, fikirleri çalışan ürünlere dönüştürürüm.",
+  headline: "Fikirleri temiz kodla buluşturur, yaşayan ve çalışan ürünler inşa ederim.",
   bio: "React.js, Next.js, Laravel, PHP, MySQL ve Tailwind CSS ile modern, responsive ve yönetilebilir web uygulamaları geliştiriyorum.",
   aboutTitle: "Hakkımda",
   aboutParagraph1:
@@ -337,7 +337,7 @@ export const portfolioDataEN: PortfolioData = {
   role: "Web Developer",
   availableForWork: true,
   availableText: "Available for Work",
-  headline: "I write code in the dark and turn ideas into working products.",
+  headline: "I bring ideas together with clean code, building living and working products.",
   bio: "I develop modern, responsive and manageable web applications with React.js, Next.js, Laravel, PHP, MySQL and Tailwind CSS.",
   aboutTitle: "About Me",
   aboutParagraph1:
